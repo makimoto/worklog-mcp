@@ -1,0 +1,61 @@
+{
+  "name": "@makimoto/worklog-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for AI agents to save and manage work logs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "worklog-mcp": "./dist/index.js",
+    "worklog": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "clean": "rm -rf dist",
+    "start": "node dist/cli.js --stdio",
+    "cli": "npm run build && node dist/cli/index.js",
+    "prepublishOnly": "npm run clean && npm run build && npm test"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "ai-agent",
+    "work-log",
+    "logging"
+  ],
+  "author": "Shimpei Makimoto",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makimoto/worklog-mcp.git"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "commander": "^14.0.0",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
+    "eslint": "^9.31.0",
+    "jest": "^30.0.5",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.0",
+    "typescript": "^5.8.3"
+  }
+}
