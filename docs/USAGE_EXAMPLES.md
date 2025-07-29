@@ -14,7 +14,7 @@
 
 ```bash
 # Install the package
-npm install @makimoto/worklog-mcp
+npm install worklog-mcp
 
 # Or clone and build locally
 git clone <repository-url>
@@ -29,7 +29,7 @@ npm run build
 
 ```bash
 # Add MCP server to Claude Desktop
-claude mcp add worklog npx @makimoto/worklog-mcp
+claude mcp add worklog npx worklog-mcp
 ```
 
 **Option 2: Manual Configuration**
@@ -41,7 +41,7 @@ Add to your MCP client configuration:
   "mcpServers": {
     "worklog": {
       "command": "npx",
-      "args": ["@makimoto/worklog-mcp"],
+      "args": ["worklog-mcp"],
       "env": {
         "WORKLOG_DB_PATH": "/path/to/your/worklog.db"
       }

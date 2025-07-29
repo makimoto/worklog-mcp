@@ -1,5 +1,5 @@
 {
-  "name": "@makimoto/worklog-mcp",
+  "name": "worklog-mcp",
   "version": "0.1.0",
   "description": "MCP server for AI agents to save and manage work logs",
   "main": "dist/index.js",

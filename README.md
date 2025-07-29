@@ -16,9 +16,9 @@ A comprehensive Model Context Protocol (MCP) server for AI agents to save and ma
 
 ### Installation
 
-**For Published Package** (not yet available):
+**For Published Package**:
 ```bash
-npm install @makimoto/worklog-mcp
+npm install worklog-mcp
 ```
 
 **For Local Development**:
@@ -73,7 +73,7 @@ claude mcp add worklog worklog-mcp
 
 ```bash
 # Add MCP server to Claude Desktop
-claude mcp add worklog npx @makimoto/worklog-mcp
+claude mcp add worklog npx worklog-mcp
 ```
 
 ### Basic Usage
@@ -175,7 +175,7 @@ If you encounter connection errors, try these solutions:
 
 2. **Re-add the server**:
    ```bash
-   claude mcp add worklog npx @makimoto/worklog-mcp
+   claude mcp add worklog npx worklog-mcp
    ```
 
 3. **Verify the configuration**:
@@ -185,7 +185,7 @@ If you encounter connection errors, try these solutions:
 
 4. **Check that the package is accessible**:
    ```bash
-   npx @makimoto/worklog-mcp --help
+   npx worklog-mcp --help
    ```
 
 ### Database Issues
