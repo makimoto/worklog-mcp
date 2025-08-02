@@ -16,7 +16,7 @@ A comprehensive Model Context Protocol (MCP) server for AI agents to save and ma
 
 ### Installation
 
-**For Published Package**:
+**Install from npm**:
 ```bash
 npm install worklog-mcp
 ```
@@ -36,11 +36,11 @@ npm run build
 
 ### MCP Server Setup
 
-**Option 1: Local Development Setup (Current)**
+**Option 1: Using Published Package (Recommended)**
 
 ```bash
-# Using Claude Desktop with local path
-claude mcp add worklog node /path/to/worklog-mcp/dist/index.js
+# Add MCP server to Claude Code
+claude mcp add worklog npx worklog-mcp
 ```
 
 Or add to your MCP configuration manually (`~/.claude/config.json`):
@@ -49,8 +49,8 @@ Or add to your MCP configuration manually (`~/.claude/config.json`):
 {
   "mcpServers": {
     "worklog": {
-      "command": "node",
-      "args": ["/path/to/worklog-mcp/dist/index.js"],
+      "command": "npx",
+      "args": ["worklog-mcp"],
       "env": {
         "WORKLOG_DB_PATH": "~/.worklog/work_logs.db"
       }
@@ -59,21 +59,25 @@ Or add to your MCP configuration manually (`~/.claude/config.json`):
 }
 ```
 
-**Option 2: Using npm link (Local Development)**
+**Option 2: Direct Path (For Active Development)**
+
+Use this when actively developing and testing changes to worklog-mcp:
 
 ```bash
-# In the project directory
-npm link
-
-# Then add to Claude Desktop
-claude mcp add worklog worklog-mcp
+# Point directly to your local build
+claude mcp add worklog node /path/to/worklog-mcp/dist/index.js
 ```
 
-**Option 3: When Published (Future)**
+**Option 3: npm link (For Testing as Installed Package)**
+
+Use this to test your local version as if it were installed from npm:
 
 ```bash
-# Add MCP server to Claude Desktop
-claude mcp add worklog npx worklog-mcp
+# In the worklog-mcp project directory
+npm link
+
+# Then add to Claude Code (uses the linked version)
+claude mcp add worklog worklog-mcp
 ```
 
 ### Basic Usage
@@ -136,6 +140,7 @@ worklog config set databasePath ~/custom-worklog.db
 
 ## Documentation
 
+- **[AI Agent Guide](docs/AI_AGENT_GUIDE.md)** - Guide for AI Agents (Claude Code, Cursor, Cline) to effectively use worklog-mcp
 - **[API Reference](docs/API_REFERENCE.md)** - Complete API documentation with all MCP tools, parameters, and response formats
 - **[Usage Examples](docs/USAGE_EXAMPLES.md)** - Comprehensive examples for various workflows and integration scenarios
 
@@ -353,7 +358,7 @@ Edit `~/.claude/config.json`:
 ### Debug Mode
 
 ```bash
-# Run Claude Desktop with debug output
+# Run Claude Code with debug output
 claude --debug
 ```
 
